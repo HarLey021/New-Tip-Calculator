@@ -1,0 +1,45 @@
+.percent-button {
+  width: 146px;
+  height: 48px;
+  border-radius: 5px;
+  background-color: #00474b;
+  margin-top: 0;
+  color: #fff;
+  font-size: 24px;
+  border: none;
+}
+
+.percent-input {
+  width: 148px;
+  height: 48px;
+  border-radius: 5px;
+  background: #f3f9fa;
+  color: #00474b;
+  text-align: right;
+  font-size: 24px;
+  padding: 6px 17px;
+  border: none;
+  margin-bottom: 0;
+}
+
+.active {
+  background: #9fe8df;
+}
+
+@media (min-width: 1080px) {
+  .percent-button:hover {
+    background: #9fe8df;
+  }
+
+  .percent-input:hover {
+    border: 2px solid #26c2ae;
+  }
+
+  .percent-button {
+    width: 117px;
+  }
+
+  .percent-input {
+    width: 117px;
+  }
+}

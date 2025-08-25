@@ -1,0 +1,65 @@
+input {
+  width: 100%;
+  height: 48px;
+  border-radius: 5px;
+  background: #f3f9fa;
+  border: none;
+  padding: 6px 18px;
+  position: relative;
+  text-align: right;
+  color: #00474b;
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+.input::placeholder {
+  color: #00474b;
+  opacity: 0.35;
+  text-align: right;
+  font-size: 24px;
+}
+
+.input-logo {
+  position: absolute;
+  z-index: 2;
+  margin: 15px 0 15px 18px;
+}
+
+.name-and-error-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error {
+  color: #e17457;
+  font-size: 16px;
+}
+
+.error-border {
+  border: 2px solid #e17052;
+}
+/* For removing input arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/*  */
+
+@media (min-width: 1080px) {
+  input:hover {
+    border: 2px solid #26c2ae;
+  }
+
+  .bill-input {
+    margin-bottom: 40px;
+  }
+
+  .people-input {
+    margin-bottom: 0;
+  }
+}

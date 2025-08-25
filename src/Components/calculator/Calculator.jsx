@@ -1,5 +1,5 @@
 import "./Calculator.css";
-import Input from "../input/input";
+import Input from "../input/Input";
 import splitterLogo from "../../images/logo.svg";
 import dollarLogo from "../../images/icon-dollar.svg";
 import personLogo from "../../images/icon-person.svg";

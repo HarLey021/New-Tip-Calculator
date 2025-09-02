@@ -29,11 +29,16 @@ h1 {
 
 .percentage-container {
   width: 100%;
-  justify-content: space-between;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(146px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(146px, 1fr));
   gap: 16px;
   margin-bottom: 32px;
+}
+
+@media (max-width: 375px) {
+  .percentage-container {
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 1080px) {

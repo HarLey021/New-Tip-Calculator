@@ -5,6 +5,7 @@
   background: #00474b;
   margin-bottom: 32px;
   padding: 37px 23px 0 23px;
+  font-family: inherit;
 }
 
 .tip-container,
@@ -47,6 +48,7 @@ p {
   padding: 9px 32px;
   color: #00474b;
   font-size: 20px;
+  font-family: inherit;
 }
 
 .active {

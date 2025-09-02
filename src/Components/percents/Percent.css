@@ -1,5 +1,5 @@
 .percent-button {
-  width: 146px;
+  width: 100%;
   height: 48px;
   border-radius: 5px;
   background-color: #00474b;
@@ -7,10 +7,11 @@
   color: #fff;
   font-size: 24px;
   border: none;
+  font-family: inherit;
 }
 
 .percent-input {
-  width: 148px;
+  width: 100%;
   height: 48px;
   border-radius: 5px;
   background: #f3f9fa;
@@ -20,10 +21,25 @@
   padding: 6px 17px;
   border: none;
   margin-bottom: 0;
+  font-family: inherit;
+}
+
+.percent-input::placeholder {
+  text-align: center;
 }
 
 .active {
   background: #9fe8df;
+}
+
+@media (max-width: 375px) {
+  .percent-button {
+    width: 100%;
+  }
+
+  .percent-input {
+    width: 100%;
+  }
 }
 
 @media (min-width: 1080px) {

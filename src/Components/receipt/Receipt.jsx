@@ -1,24 +1,24 @@
 import "./Receipt.css";
 
 export default function Receipt({
-  tip,
-  total,
   disableReset,
   setDisableReset,
   setBill,
   setPercent,
   setCustomPercent,
   setPeople,
-  setTip,
-  setTotal,
+  tipPerPerson,
+  totalPerPerson,
+  setShowError,
 }) {
   const handleReset = () => {
     setBill("");
     setPercent("");
     setCustomPercent("");
     setPeople("");
-    setTip("00.00");
-    setTotal("00.00");
+    tipPerPerson = "00.00";
+    totalPerPerson = "00.00";
+    setShowError(false);
     setDisableReset(true);
   };
   return (
@@ -28,7 +28,7 @@ export default function Receipt({
           <h3>Tip Amount</h3>
           <h6>/ person</h6>
         </div>
-        <p>${tip}</p>
+        <p>${Number(tipPerPerson).toFixed(2)}</p>
       </div>
 
       <div className="total-container">
@@ -36,7 +36,7 @@ export default function Receipt({
           <h3>Total</h3>
           <h6>/ person</h6>
         </div>
-        <p>${total}</p>
+        <p>${Number(totalPerPerson).toFixed(2)}</p>
       </div>
 
       <button

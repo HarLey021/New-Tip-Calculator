@@ -10,7 +10,6 @@ export default function Calculator() {
   const [customPercent, setCustomPercent] = useState("");
   const [people, setPeople] = useState("");
   const [showError, setShowError] = useState(false);
-  const [disableReset, setDisableReset] = useState(true);
 
   let tipPerPerson = "00.00";
   let totalPerPerson = "00.00";
@@ -21,11 +20,6 @@ export default function Calculator() {
       billValue = "";
     }
     setBill(billValue);
-    if (!isNaN(billValue) && billValue > 0) {
-      setDisableReset(false);
-    } else {
-      setDisableReset(true);
-    }
   };
 
   const handlePeopleInput = (event) => {
@@ -33,19 +27,16 @@ export default function Calculator() {
     setPeople(peopleValue);
     if (!isNaN(peopleValue)) {
       if (peopleValue > 0) {
-        setDisableReset(false);
         setShowError(false);
       } else if (peopleValue === 0) {
         setShowError(true);
-        setDisableReset(false);
       }
     } else {
-      setDisableReset(true);
       setShowError(false);
     }
   };
 
-  if (bill > 0 && people > 0 && percent > 0) {
+  if (bill > 0 && people > 0 && percent >= 0) {
     tipPerPerson = ((bill / 100) * percent) / people;
     totalPerPerson = bill / people + tipPerPerson;
   }
@@ -80,7 +71,6 @@ export default function Calculator() {
                 setPercent={setPercent}
                 customPercent={customPercent}
                 setCustomPercent={setCustomPercent}
-                setDisableReset={setDisableReset}
               />
             ))}
           </div>
@@ -98,15 +88,17 @@ export default function Calculator() {
           />
         </div>
         <Receipt
+          bill={bill}
+          percent={percent}
+          customPercent={customPercent}
+          people={people}
           setBill={setBill}
           setPercent={setPercent}
           setCustomPercent={setCustomPercent}
           setPeople={setPeople}
           tipPerPerson={tipPerPerson}
           totalPerPerson={totalPerPerson}
-          disableReset={disableReset}
           setShowError={setShowError}
-          setDisableReset={setDisableReset}
         />
       </div>
     </div>

@@ -23,6 +23,11 @@ export default function Input({
         value={value}
         className={`${className} ${showError ? "error-border" : ""}`}
         type="number"
+        onKeyDown={(e) => {
+          if (e.key === "-" || e.key === "+") {
+            e.preventDefault();
+          }
+        }}
         label={label}
         placeholder={placeholder}
       />

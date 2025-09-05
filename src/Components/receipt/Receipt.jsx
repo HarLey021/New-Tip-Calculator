@@ -1,8 +1,10 @@
 import "./Receipt.css";
 
 export default function Receipt({
-  disableReset,
-  setDisableReset,
+  bill,
+  percent,
+  customPercent,
+  people,
   setBill,
   setPercent,
   setCustomPercent,
@@ -19,8 +21,12 @@ export default function Receipt({
     tipPerPerson = "00.00";
     totalPerPerson = "00.00";
     setShowError(false);
-    setDisableReset(true);
   };
+
+  const isActive = [bill, percent, customPercent, people].some(
+    (v) => v != null && v !== undefined && String(v).trim() !== ""
+  );
+
   return (
     <div className="receipt-container">
       <div className="tip-container">
@@ -41,7 +47,7 @@ export default function Receipt({
 
       <button
         onClick={handleReset}
-        className={`reset-button ${!disableReset ? "active" : ""}`}
+        className={`reset-button ${isActive ? "active" : ""}`}
       >
         RESET
       </button>

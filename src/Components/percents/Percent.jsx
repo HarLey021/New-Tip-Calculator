@@ -6,7 +6,6 @@ export default function Percent({
   customPercent,
   setPercent,
   setCustomPercent,
-  setDisableReset,
 }) {
   const isActive = percent === percentage;
   const percentageInputHandle = (event) => {
@@ -17,7 +16,6 @@ export default function Percent({
       setDisableReset(false);
     } else {
       setPercent(0);
-      setDisableReset(true);
       setCustomPercent("");
     }
   };
@@ -25,7 +23,6 @@ export default function Percent({
   const percentageClickHandle = () => {
     setPercent(percentage);
     setCustomPercent("");
-    setDisableReset(false);
   };
   if (percentage === "Custom") {
     return (
@@ -36,6 +33,11 @@ export default function Percent({
         type="number"
         min="0"
         placeholder="Custom"
+        onKeyDown={(e) => {
+          if (e.key === "-" || e.key === "+") {
+            e.preventDefault();
+          }
+        }}
       />
     );
   }
